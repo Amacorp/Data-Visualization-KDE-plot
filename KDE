@@ -1,0 +1,18 @@
+API:  kaggle datasets download -d uciml/iris
+
+# Path of the file to read
+iris_filepath = "https://www.kaggle.com/uciml/iris/download/input/iris.csv"
+
+# Read the file into a variable iris_data
+iris_data = pd.read_csv(iris_filepath, index_col="Id")
+
+# Print the first 5 rows of the data
+iris_data.head()
+
+
+
+# Histogram 
+sns.distplot(a=iris_data['Petal Length (cm)'], kde=False)
+
+# KDE plot 
+sns.kdeplot(data=iris_data['Petal Length (cm)'], shade=True)
